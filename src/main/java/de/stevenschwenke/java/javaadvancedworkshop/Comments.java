@@ -1,7 +1,7 @@
 package de.stevenschwenke.java.javaadvancedworkshop;
 
 /**
- * Created by schwenks on 22.12.2015.
+ * Shows different comment types in Java and when they are used.
  */
 public class Comments {
 
