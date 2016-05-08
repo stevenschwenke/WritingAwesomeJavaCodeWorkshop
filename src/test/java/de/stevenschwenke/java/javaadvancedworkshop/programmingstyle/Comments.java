@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.javaadvancedworkshop;
+package de.stevenschwenke.java.javaadvancedworkshop.programmingstyle;
 
 /**
  * Shows different comment types in Java and when they are used.

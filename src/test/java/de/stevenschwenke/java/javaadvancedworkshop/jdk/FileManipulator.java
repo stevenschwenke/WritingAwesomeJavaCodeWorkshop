@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.javaadvancedworkshop;
+package de.stevenschwenke.java.javaadvancedworkshop.jdk;
 
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
