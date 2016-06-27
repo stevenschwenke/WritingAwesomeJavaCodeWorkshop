@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.javaadvancedworkshop.hashcodeandequals;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.hashcodeandequals;
 
 import org.junit.Test;
 
