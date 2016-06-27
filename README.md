@@ -1,4 +1,4 @@
-JavaAdvancedWorkshop
+Writing Awesome Java Code Workshop
 ===================
 
 Shippable status:
