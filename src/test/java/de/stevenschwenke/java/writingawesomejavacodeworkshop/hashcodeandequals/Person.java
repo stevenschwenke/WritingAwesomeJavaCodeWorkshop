@@ -6,15 +6,11 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 /**
  * This class represents a person. Each person is identified solely by its name.
  */
-public class Person {
+class Person {
 
     private String name;
 
-    public Person(String name) {
-        this.name = name;
-    }
-
-    public void setName(String name) {
+    Person(String name) {
         this.name = name;
     }
 
