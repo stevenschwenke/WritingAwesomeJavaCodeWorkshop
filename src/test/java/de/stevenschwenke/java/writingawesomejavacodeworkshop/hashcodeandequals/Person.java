@@ -14,7 +14,8 @@ class Person {
         this.name = name;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
@@ -29,7 +30,8 @@ class Person {
             .isEquals();
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return new HashCodeBuilder(17, 37).append(name)
             .toHashCode();
     }
