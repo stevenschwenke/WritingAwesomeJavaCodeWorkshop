@@ -45,4 +45,20 @@ public class BigDecimalCompareEqual {
         System.out.println(e5_1); // 5 > 1 :  false
     }
 
+    /**
+     * The reasoning behind the difference of the results of compareTo() and equals() lies in the fact that:
+     * compareTo() -  compares based on the difference(!)
+     * equals()    -  compares the equality of both numbers including the scale(!)
+     *
+     *       ==  vs  >/<
+     */
+    @Test
+    public void differenceOnScale() {
+        BigDecimal dec1_5  = new BigDecimal("1.5");
+        BigDecimal dec1_50 = new BigDecimal("1.50");
+
+        System.out.println(     dec1_5.compareTo(dec1_50) == 0   );    // 1.5 = 1.50 : true
+        System.out.println(     dec1_5.equals(dec1_50)           );    // 1.5 = 1.50 : false ?!
+    }
+
 }
