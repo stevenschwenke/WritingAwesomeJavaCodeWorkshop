@@ -46,11 +46,12 @@ public class BigDecimalCompareEqual {
     }
 
     /**
-     * The reasoning behind the difference of the results of compareTo() and equals() lies in the fact that:
-     * compareTo() -  compares based on the difference(!)
-     * equals()    -  compares the equality of both numbers including the scale(!)
+     * The reason behind the difference of the results of compareTo() and equals() in this test lies in the fact that:
      *
-     *       ==  vs  >/<
+     * {@link BigDecimal#compareTo(BigDecimal)} -  compares based on the difference(!)
+     * {@link BigDecimal#equals(Object)}        -  compares the equality of both numbers including the scale(!)
+     *
+     * Look inside the respective JavaDoc for more information.
      */
     @Test
     public void differenceOnScale() {
