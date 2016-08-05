@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.stevenschwenke.java</groupId>
-    <artifactId>JavaAdvancedWorkshop</artifactId>
+    <artifactId>WritingAwesomeJavaCodeWorkshop</artifactId>
     <version>1.0</version>
 
     <properties>
