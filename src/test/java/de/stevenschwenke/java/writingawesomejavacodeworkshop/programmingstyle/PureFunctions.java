@@ -37,7 +37,7 @@ public class PureFunctions {
         - Developers tend to write shorter methods when these methods are pure functions
 
         Finding out if a method is a pure function:
-        - add a temporary "static"
+        - (just a hint) add a temporary "static" => doesn't work for myPureFunction2!
         - let the IDE do the work for you: IDEA shows a little icon at the line of the method
      */
 

@@ -202,10 +202,10 @@ public class APIDesignWithLambdas {
 
     @Test(expected = RuntimeException.class)
     public void otherExamplesOfFlexibleAPI() throws Exception {
-        Set<Integer> integerList = new HashSet<>(Arrays.asList(1,2,3));
-        assertEquals(3, integerList.size());
-        integerList.removeIf(x -> x  == 3); // Flexible API
-        assertEquals(2, integerList.size());
+        Set<Integer> integerSet = new HashSet<>(Arrays.asList(1,2,3));
+        assertEquals(3, integerSet.size());
+        integerSet.removeIf(x -> x  == 3); // Flexible API
+        assertEquals(2, integerSet.size());
 
         Stream<Integer> integerStream = Stream.of(1, 2, 3);
         Object[] array = integerStream.filter(x -> x < 3).toArray(); // filter() = flexible API
