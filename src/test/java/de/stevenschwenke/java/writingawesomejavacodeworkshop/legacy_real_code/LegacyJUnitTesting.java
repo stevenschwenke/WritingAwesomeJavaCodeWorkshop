@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.legacy1;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.legacy_real_code;
 
 import java.util.ArrayList;
 import java.util.HashMap;

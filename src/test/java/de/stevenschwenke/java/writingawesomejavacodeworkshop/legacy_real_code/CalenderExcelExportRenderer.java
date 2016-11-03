@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.legacy1;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.legacy_real_code;
 
 public class CalenderExcelExportRenderer {
 
