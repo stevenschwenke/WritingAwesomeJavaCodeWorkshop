@@ -65,4 +65,14 @@ public class VisibilityTest {
     protected class Z {
 
     }
+
+    /////////////////
+    // One more thing: overuse of getters and setters
+    //
+    // Often, the first thing after creating a class and adding its attributes, getter and setter
+    // methods are created for each of the attributes. This destroys the encapsulation principle
+    // for which those methods have been defined! Only write getter and setter for those attributes
+    // you really want to access.
+    //
+    /////////////////
 }
