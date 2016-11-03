@@ -72,8 +72,8 @@ public class FluentAPIs {
     }
 
     // Maybe you want to write fluent APIs that are used as factories, but don't want to write
-    // code like the above one. May Lombok (https://projectlombok.org) is for you. However,
-    // is needs plugins to enable annotation processors to compile.
+    // code like the above one. Maybe the @Builder annotation in Lombok (https://projectlombok.org)
+    // is for you. However, it needs plugins to enable annotation processors to compile.
 
     @Test
     public void examplesForFluentAPIs() {
