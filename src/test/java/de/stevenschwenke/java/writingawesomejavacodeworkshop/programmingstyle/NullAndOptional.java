@@ -310,4 +310,8 @@ public class NullAndOptional {
             .map(USB::getVersion)
             .orElse("UNKNOWN");
     }
+
+    // If you cannot use Java 8 Optionals in your code, you can use Guava:
+    // https://github.com/google/guava
+    // https://github.com/google/guava/wiki/UsingAndAvoidingNullExplained
 }
