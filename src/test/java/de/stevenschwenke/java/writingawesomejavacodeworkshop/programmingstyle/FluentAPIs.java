@@ -23,6 +23,8 @@ public class FluentAPIs {
         Store myStore = new Store();
         myStore.with("Desk").with("Rack").with("Chair").openFrom(LocalTime.of(9, 0))
             .openUntil(LocalTime.of(18, 0));
+
+        // This is an alternative to the builder pattern.
     }
 
     /**
@@ -69,6 +71,10 @@ public class FluentAPIs {
         }
     }
 
+    // Maybe you want to write fluent APIs that are used as factories, but don't want to write
+    // code like the above one. May Lombok (https://projectlombok.org) is for you. However,
+    // is needs plugins to enable annotation processors to compile.
+
     @Test
     public void examplesForFluentAPIs() {
         // Streams:
@@ -98,6 +104,10 @@ public class FluentAPIs {
     ////////////////////////
     // Using Fluent APIs to write DSLs (Domain Specific Languages).
     // Code taken from https://blog.jooq.org/2012/01/05/the-java-fluent-api-designer-crash-course/
+    //
+    // This example illustrates how a fluent API can be designed. However, chains of calls through
+    // too much classes and methods can become unreadable easily. Also, code formatting can render
+    // your nice-looking chain an unreadable trainwreck.
     ////////////////////////
 
     // Initial interface, entry point of the DSL
