@@ -1,9 +1,9 @@
 This is a set of processes and tips for dealing with legacy code. Often, these codebases have to be changed either by adding more functionality or refactoring. These changes often introduce errors. This is why testing them somehow is a great idea. Often, writing JUnit tests is not a viable option because of the structure of the codebase. This is where the following techniques come into play.
 
-#Sprud Methods
+#Sprout Methods
 - legacy system often without tests
 - introducing new functionality only with tests!
-- => new functionality in the form of new methods ("sproud methods") or new classes ("sproud classes") that are developed using TDD
+- => new functionality in the form of new methods ("sprout methods") or new classes ("sprout classes") that are developed using TDD
 
 #Golden Master
 
