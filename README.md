@@ -29,13 +29,30 @@ Usual introduction of participants. However, ask explicitly what "awesome Java C
 
 to the contents.
 
-###Part 1: Techniques and isolated exercises
+###Part 1: Possibilities of Java language, best practices and methods
 
 Explain each chapter about the techniques and let the participants do the corresponding exercise. These need the code brought into the workshop by the participants. The goal here is to have time to apply the learned directly to the current project. After each exercise, a short discussion transfers the knowledge to all participants.
 
-###Part 2: Writing JUnit tests for legacy code
+###Part 2: Methods for dealing with legacy code
+
+Explain techniques listed in HowToDealWithLegacyCode.md. This is a more theoretical presentation.
+
+###Part 3: Applying best practices and methods to legacy code
  
-Use the formerly explained techniques to do a smallscale legacy coderetreat. The participants have to write JUnit-tests for the code, doing pair programming. After each round of 30 to 40 minutes, a retrospective should be held. The participants explain to the group what they did and if it was successful. Delete all changes after each session and begin with new pairs.  
+Use all the formerly explained knowledge to do a small scale legacy coderetreat. The participants have to write JUnit-tests for the code, doing pair programming. After each round of 30 to 40 minutes, a retrospective should be held. The participants explain to the group what they did and if it was successful. Delete all changes after each session and begin with new pairs. 
+
+There are three codebases that can be used for this part:
+ 1. Ugly Trivia game in the legacy_ugly_trivia folder
+ 2. An extract from an real-world application in the legacy_real_code folder
+ 3. The codebase brought by the participants
+
+Sessions could be:
+
+1. Get to know the code: Just try to understand what's going on, what is OK and what is not. Try refactoring and writing tests.
+2. After reflecting what the other groups did, try to refactor your codebase one more time, using your new insight. What would you do different now? Also possible: Use one of the other codebases this time.
+3. Mikado Method. Develop a tree of refactorings and implement it using this method.
+4. Golden Master. Challenges here are how to get rid of the random nature of the output and automate the creation and comparison of the output.
+5. TDD. Often, developers don't know how to write tests. Try writing TDD as if you mean it!
   
 ##Meta: Copyright
 
