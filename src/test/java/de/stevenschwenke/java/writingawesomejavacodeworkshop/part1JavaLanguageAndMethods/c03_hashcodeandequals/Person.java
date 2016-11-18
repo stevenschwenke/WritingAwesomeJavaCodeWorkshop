@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.hashcodeandequals;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c03_hashcodeandequals;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -11,6 +11,14 @@ class Person {
     private String name;
 
     Person(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 

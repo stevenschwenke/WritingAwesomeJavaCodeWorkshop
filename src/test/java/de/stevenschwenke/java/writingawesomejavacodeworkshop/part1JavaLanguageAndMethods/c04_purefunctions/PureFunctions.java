@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.programmingstyle;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c04_purefunctions;
 
 /**
  * Pure functions can be used to write maintainable code that is much easier to debug.

@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.junit;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c08_junit;
 
 import org.junit.Test;
 

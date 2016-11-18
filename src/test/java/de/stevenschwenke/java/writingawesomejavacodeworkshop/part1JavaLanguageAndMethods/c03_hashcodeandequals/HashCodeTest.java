@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.hashcodeandequals;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c03_hashcodeandequals;
 
 import org.junit.Test;
 
@@ -8,6 +8,14 @@ import java.util.Set;
 import static junit.framework.TestCase.assertTrue;
 
 public class HashCodeTest {
+
+    /*
+
+    Beginners question: What are hashCode() and equals() ? Why are they the best friends (BFF) ever?
+
+    Pro-question: What ways do you know to implement hashCode() and equals() ? What are the (dis)advantages?
+
+     */
 
     @Test
     public void objectInHashSetGetsLostWhenHashCodeChanges() {
@@ -23,5 +31,4 @@ public class HashCodeTest {
 
         assertTrue(crowd.contains(hans));
     }
-
 }

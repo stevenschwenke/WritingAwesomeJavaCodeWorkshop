@@ -1,6 +1,6 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.visibility;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c02_visibility;
 
-import de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.visibility.another.Subclass;
+import de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c02_visibility.another.Subclass;
 
 import org.junit.Test;
 
@@ -44,6 +44,8 @@ public class VisibilityTest {
 
         // => This is the reason why "private" methods that have JUnit-tests have to be package-
         // private instead of protected!
+
+        // Pro-Question: What are private methods for?
     }
 
     // Last thing to learn here: Inner classes are often marked as public. Don't do that if you

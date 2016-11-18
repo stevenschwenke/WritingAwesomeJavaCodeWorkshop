@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.immutable;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c05_immutable;
 
 import org.junit.Test;
 
@@ -34,6 +34,7 @@ public class Immutability {
         assertEquals(1, account.getTransactions().size());
         assertEquals(b1, account.getTransactions().head());
 
+        // interesting: Normally, there would be a method setName(). We don't want setters here, so name it "rename" :)
         account = account.rename("Former Stevens Account");
         assertEquals("Former Stevens Account", account.getName());
         assertEquals(1, account.getTransactions().size());
