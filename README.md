@@ -33,13 +33,17 @@ to the contents.
 
 Explain each chapter about the techniques and let the participants do the corresponding exercise. These need the code brought into the workshop by the participants. The goal here is to have time to apply the learned directly to the current project. After each exercise, a short discussion transfers the knowledge to all participants.
 
+After those "isolated" exercises, introduce participants to the ugly trivia game and let them perform two sessions of a legacy code retreat: 45 minutes of pair programming with no specific goal. Just fiddle around with that code base. 
+
 ###Part 2: Methods for dealing with legacy code
 
 Explain techniques listed in HowToDealWithLegacyCode.md. This is a more theoretical presentation.
 
+After a short break, do a live coding session with the contents from Adrian Bolboaca. It's whise to print the markdown-file and let the printout guide you in your live coding.
+
 ###Part 3: Applying best practices and methods to legacy code
  
-Use all the formerly explained knowledge to do a small scale legacy coderetreat. The participants have to write JUnit-tests for the code, doing pair programming. After each round of 30 to 40 minutes, a retrospective should be held. The participants explain to the group what they did and if it was successful. Delete all changes after each session and begin with new pairs. 
+Use all the formerly explained knowledge to do a small scale legacy coderetreat. The participants have to write JUnit-tests for the code, doing pair programming. After each round of 45 minutes, a retrospective should be held. The participants explain to the group what they did and if it was successful. Delete all changes after each session and begin with new pairs. 
 
 There are three codebases that can be used for this part:
  1. Ugly Trivia game in the legacy_ugly_trivia folder
