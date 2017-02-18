@@ -110,3 +110,28 @@ This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blo
         "Science Question 0\r\n", stream.toString());
     }
      ```
+
+##Using System Rules to hijack system.out
+The method getConsoleOutput used above can be replaced by using [System Rules](http://stefanbirkner.github.io/system-rules/index.html) by [Stefan Birkner](http://www.stefan-birkner.de/). Here's the setup and first test:
+
+   ```java
+    private Game game;
+
+    @Rule
+    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
+
+    @Before
+    public void setup() {
+        game = new Game();
+    }
+
+    @Test
+    public void WhenGameIsCreatedNothingIsWrittenToTheOutput() {
+        String systemOut = systemOutRule.getLog();
+        String emptyString = ""; // extracted to variable to make clear my intent was to have an empty output
+
+        assertEquals(emptyString, systemOut);
+    }
+    
+    // ...
+     ``` 
