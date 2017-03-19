@@ -134,4 +134,12 @@ The method getConsoleOutput used above can be replaced by using [System Rules](h
     }
     
     // ...
-     ``` 
+   ``` 
+
+#Episode 2:
+- ["Golden Master"](http://blog.adrianbolboaca.ro/2014/05/golden-master-code-cast/)
+- description of technique see HowToDealWithLegacyCode.md
+- code see package ep_2_golden_master
+1. Refactor GameRunner: extract method play(Random rand)
+1. Write GoldenMaster.java to create Golden Master and test against it
+1. Write GameTestsEpisode2.java to execute tests

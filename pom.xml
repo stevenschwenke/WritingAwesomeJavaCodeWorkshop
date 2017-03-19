@@ -43,6 +43,13 @@
             <artifactId>a-foundation</artifactId>
             <version>1.0-pre19</version>
         </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -26,6 +26,7 @@ This is a set of processes and tips for dealing with legacy code. Often, these c
 - code under test too complex to generate templates for every input. Solution: sampling. Use a few of the many possible inputs. Example: method that operates on an integer => test with -1, 0, 1, 1.000. Greater number of samples = greater trust in samples. Importance of the code should match number of samples. Better go slow with many samples than be fast and fail. 
 
 ## Example
+- Adrian Bolboaca, see package ep_2_golden_master
 - Article [Surviving Legacy Code with Golden Master and Sampling](http://blog.thecodewhisperer.com/permalink/surviving-legacy-code-with-golden-master-and-sampling/), chapter "The techniques in action": Create multiple Golden Masters for Ugly Trivia Game: Start at [this commit](https://github.com/jbrains/SurvivingLegacyCode-solutions/tree/110dc1308c05a7c43a1d991c66f7dae7633e921a) and read the commits added later. Also, note how tiny and easy to understand these commits are.
 - interesting addition by [Falk Sippachs talk at Java Forum Nord 2016](http://www.oio.de/m/konf/vortraege/JavaForumNord2016-TestDrivenLegacyCodeRefactoring-FalkSippach.pdf): Don't alter code under test to create Golden Master. Use test infrastructure:
  
