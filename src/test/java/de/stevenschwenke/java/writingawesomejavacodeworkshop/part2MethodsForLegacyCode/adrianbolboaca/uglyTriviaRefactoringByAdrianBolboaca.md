@@ -1,12 +1,12 @@
 This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blog.adrianbolboaca.ro/). Adrian provides a step by step walkthrough about how to write tests for the [ugly trivia game by J. B. Rainsberger](https://github.com/jbrains/trivia). [Here's](http://blog.adrianbolboaca.ro/2014/04/from-nothing-to-system-tests-code-cast/) the first episode of Adrians Code Cast. I strongly recommend having a look at this - it's awesome!
 
-#Episode 1:
+# Episode 1:
 - ["From nothing to system tests"](http://blog.adrianbolboaca.ro/2014/04/from-nothing-to-system-tests-code-cast/)
 - How to write black box tests
 - tests are safety net for later refactoring
 - logic: Make a guess => write characterization test based on guess => Test guess => Modification
 
-##Test 1
+## Test 1
 1. name: "whenGameIsCreatedNothingHappens"
 1. Hijack output
 1. Just calling "new Game()" and see what happens. Insight: game is instantiated and prints empty string. This is the foundation of the following tests.
@@ -27,7 +27,7 @@ This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blo
     }
     ```
 
-##Test 2
+## Test 2
 1. execute GameRunner. Insight: output of player names. 
 1. Guess: When player is added, output of player name
 1. Test: game.add("Adi") => output of "Adi was added\nThey are player number 1" => guess was wrong! Change test so it runs green.
@@ -50,7 +50,7 @@ This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blo
     }
      ```
 
-##Test 3
+## Test 3
 1. same as test 2 but add 2 players
 1. immediately green => guess of test 2 correct!
 1. observation: in 3 tests 3x instantiation of Game and handling of output stream. Refactor to @before- and getConsoleOutput-Method
@@ -85,7 +85,7 @@ This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blo
     }
     ```
 
-##Test 4
+## Test 4
 1. new test "whenRollingDiceSomethingHappens" with a call to game.roll(1), at first assert console to empty String
 1. observation: IndexOutOfBoundsException.
 1. black box to white box: Have a look at class Game. players.get(currentPlayer). players is an ArrayList. Insight: Add at least one player before roll(). Add game.add("SomePlayer"); to test. 
@@ -111,7 +111,7 @@ This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blo
     }
      ```
 
-##Using System Rules to hijack system.out
+## Using System Rules to hijack system.out
 The method getConsoleOutput used above can be replaced by using [System Rules](http://stefanbirkner.github.io/system-rules/index.html) by [Stefan Birkner](http://www.stefan-birkner.de/). Here's the setup and first test:
 
    ```java
@@ -136,7 +136,7 @@ The method getConsoleOutput used above can be replaced by using [System Rules](h
     // ...
    ``` 
 
-#Episode 2:
+# Episode 2:
 - ["Golden Master"](http://blog.adrianbolboaca.ro/2014/05/golden-master-code-cast/)
 - description of technique see HowToDealWithLegacyCode.md
 - code see package ep_2_golden_master
