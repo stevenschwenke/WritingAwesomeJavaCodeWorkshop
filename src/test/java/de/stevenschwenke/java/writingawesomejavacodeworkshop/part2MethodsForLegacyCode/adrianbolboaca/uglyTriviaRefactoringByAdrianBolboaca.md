@@ -1,6 +1,6 @@
 This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blog.adrianbolboaca.ro/). Adrian provides a step by step walkthrough about how to write tests for the [ugly trivia game by J. B. Rainsberger](https://github.com/jbrains/trivia). [Here's](http://blog.adrianbolboaca.ro/2014/04/from-nothing-to-system-tests-code-cast/) the first episode of Adrians Code Cast. I strongly recommend having a look at this - it's awesome!
 
-# Episode 1:
+# Episode 1
 - ["From nothing to system tests"](http://blog.adrianbolboaca.ro/2014/04/from-nothing-to-system-tests-code-cast/)
 - How to write black box tests
 - tests are safety net for later refactoring
@@ -136,10 +136,77 @@ The method getConsoleOutput used above can be replaced by using [System Rules](h
     // ...
    ``` 
 
-# Episode 2:
+# Episode 2
 - ["Golden Master"](http://blog.adrianbolboaca.ro/2014/05/golden-master-code-cast/)
 - description of technique see HowToDealWithLegacyCode.md
 - code see package ep_2_golden_master
 1. Refactor GameRunner: extract method play(Random rand)
 1. Write GoldenMaster.java to create Golden Master and test against it
 1. Write GameTestsEpisode2.java to execute tests
+
+# Episode 3
+- [Fix bugs on legacy code](http://blog.adrianbolboaca.ro/2014/05/fix-bugs-on-legacy-code-code-cast/)
+- bug report:
+ The message announcing a correct answer should be "Answer was correct!!!!" but it is "Answer was corrent!!!!"
+- goal: fix defect without introducing new defects
+- code see package ep_3_fix_a_bug
+
+## Steps
+1. Search String "Answer was corrent!!!!" -> Game:wasCorrectlyAnswered()
+1. write system test to verify current behavior (with the defect)
+
+   ```java
+    /**
+     * Attempt to write a system test: Simply calling method with defect in it. Results in an exception.
+     */
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void createSystemTestAttempt1() {
+        Game_unmodified game = new Game_unmodified();
+        game.wasCorrectlyAnswered();
+
+        assertEquals("", systemOutRule.getLog());
+    }
+
+    /**
+     * Final version of system test: Trace source of exception -> There has to be a player added to the game.
+     */
+    @Test
+    public void gameWasCorrectlyAnsweredWhenNotInPenaltyBox() {
+        Game_unmodified game = new Game_unmodified();
+        game.add("player1");
+        game.wasCorrectlyAnswered();
+
+        assertEquals("player1 was added\r\n" +
+                "They are player number 1\r\n" +
+                "Answer was corrent!!!!\r\n" +
+                "player1 now has 1 Gold Coins.\r\n", systemOutRule.getLog());
+    }
+    ```
+
+1. extract and isolate defect: extract String in a method getCorrectAnswerMessage()
+1. write a test that clearly shows the bug
+   ```java
+    @Test
+    public void correctAnswerMessageIsValid() {
+        Game game = new Game();
+        String expected = "Answer was corrent!!!!";
+        String actual = game.getCorrectAnswerMessage();
+
+        assertEquals(expected, actual);
+    }
+    ```
+1. write new test with correct answer message
+   ```java
+    @Test
+    public void correctAnswerMessageChangedBecauseOfBug() {
+        Game game = new Game();
+        String expected = "Answer was correct!!!!";
+        String actual = game.getCorrectAnswerMessage();
+
+        assertEquals(expected, actual);
+    }
+    ```
+    => Test will fail!
+1. Change text in production code, so that the last test runs green but the test correctAnswerMessageIsValid() and the first system test fail. => Very important because that is the proof that defect has been fixed. Without these tests, there would be no way of telling if the defect has been fixed.
+1. change system test to correct text
+1. delete only failing test correctAnswerMessageIsValid() - one of those rare moments when deleting a test is OK ;)
