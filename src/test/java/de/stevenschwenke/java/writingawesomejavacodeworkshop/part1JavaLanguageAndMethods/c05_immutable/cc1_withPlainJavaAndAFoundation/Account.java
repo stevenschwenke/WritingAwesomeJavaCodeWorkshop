@@ -1,4 +1,4 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c05_immutable;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c05_immutable.cc1_withPlainJavaAndAFoundation;
 
 import com.ajjpj.afoundation.collection.immutable.AList;
 
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Immutable implementation of an account that has a number of balances.
  */
-class Account {
+final class Account {
 
     private final String name;
 

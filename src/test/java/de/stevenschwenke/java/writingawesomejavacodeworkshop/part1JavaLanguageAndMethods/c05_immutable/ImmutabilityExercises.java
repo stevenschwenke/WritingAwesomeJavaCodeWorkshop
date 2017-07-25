@@ -1,7 +1,9 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c05_immutable;
 
+import de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c05_immutable.cc1_withPlainJavaAndAFoundation.ImmutabilityWithPlainJavaAndAFoundation;
+
 /**
- * Exercises for {@link Immutability}.
+ * Exercises for {@link ImmutabilityWithPlainJavaAndAFoundation}.
  */
 public class ImmutabilityExercises {
 

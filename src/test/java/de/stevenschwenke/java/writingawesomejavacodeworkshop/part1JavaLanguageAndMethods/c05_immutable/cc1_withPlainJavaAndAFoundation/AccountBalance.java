@@ -1,9 +1,9 @@
-package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c05_immutable;
+package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c05_immutable.cc1_withPlainJavaAndAFoundation;
 
 /**
  * Immutable implementation of an account balance.
  */
-class AccountBalance {
+final class AccountBalance {
 
     /**
      * final so that this attribute cannot be changed
