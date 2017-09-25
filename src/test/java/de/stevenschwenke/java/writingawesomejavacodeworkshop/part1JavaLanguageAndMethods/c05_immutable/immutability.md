@@ -20,7 +20,7 @@ A truly immutable Java class has
 1. class has to have exclusive access to all potential immutable components (create defensive copies from attributes in constructor of immutable class and in all getter-methods) AND
 1. every attributes declared as _final_
 
-Example code see package _"cc1_withPlainJavaAndAFoundation"_
+Example code for hand-crafted immutable example see package _"cc1_withPlainJavaAndAFoundation"_.
 
 ### Examples for Immutables in Java
 - Wrapper-classes like Boolean, Integer, Long, ..., String (even if _hash_-method is not _final_)
