@@ -32,6 +32,12 @@ Example code for hand-crafted immutable example see package _"cc1_withPlainJavaA
 - [Immutables.org](http://immutables.github.io/) = Java annotation processor to generate value objects
 - [IntelliJ IDEA setup](https://immutables.github.io/apt.html#intellij-idea)
 - extended examples see package _"cc2_immutablesOrg"_
+- great documentation [here](http://immutables.github.io/immutable.html)
+- other features:
+    - default attributes (default values for optional attributes)
+    - derived attributes (automatically computed attributes, for example mapping or aggregating functions for collections)
+    - precondition check methods for validating created objects against __technical__ rules, not business-rules.
+    - custom immutable annotations, for example to create tuple-styled creation methods like _ComplexTuple.of(1d, 0d)_
 
 ## Immutable Collections
 - not native in Java
