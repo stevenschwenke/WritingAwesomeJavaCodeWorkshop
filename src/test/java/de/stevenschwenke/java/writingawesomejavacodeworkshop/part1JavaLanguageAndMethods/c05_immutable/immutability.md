@@ -20,7 +20,7 @@ A truly immutable Java class has
 1. class has to have exclusive access to all potential immutable components (create defensive copies from attributes in constructor of immutable class and in all getter-methods) AND
 1. every attributes declared as _final_
 
-Example code see package _"cc1_withPlainJavaAndAFoundation"_
+Example code for hand-crafted immutable example see package _"cc1_withPlainJavaAndAFoundation"_.
 
 ### Examples for Immutables in Java
 - Wrapper-classes like Boolean, Integer, Long, ..., String (even if _hash_-method is not _final_)
@@ -32,6 +32,12 @@ Example code see package _"cc1_withPlainJavaAndAFoundation"_
 - [Immutables.org](http://immutables.github.io/) = Java annotation processor to generate value objects
 - [IntelliJ IDEA setup](https://immutables.github.io/apt.html#intellij-idea)
 - extended examples see package _"cc2_immutablesOrg"_
+- great documentation [here](http://immutables.github.io/immutable.html)
+- other features:
+    - default attributes (default values for optional attributes)
+    - derived attributes (automatically computed attributes, for example mapping or aggregating functions for collections)
+    - precondition check methods for validating created objects against __technical__ rules, not business-rules.
+    - custom immutable annotations, for example to create tuple-styled creation methods like _ComplexTuple.of(1d, 0d)_
 
 ## Immutable Collections
 - not native in Java

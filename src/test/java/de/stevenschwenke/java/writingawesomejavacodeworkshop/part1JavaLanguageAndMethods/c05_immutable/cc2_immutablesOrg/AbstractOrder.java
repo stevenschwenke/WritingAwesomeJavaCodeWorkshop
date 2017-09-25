@@ -13,7 +13,7 @@ public abstract class AbstractOrder
      * This method will be overriden by the implementation of this class. The result of this method is calculated only
      * once when the class is called for the very first time. The result will be stored in the class.
      *
-     * @return
+     * @return price for whole order
      */
     @Value.Lazy
     public long getAllRoundPrice() {
