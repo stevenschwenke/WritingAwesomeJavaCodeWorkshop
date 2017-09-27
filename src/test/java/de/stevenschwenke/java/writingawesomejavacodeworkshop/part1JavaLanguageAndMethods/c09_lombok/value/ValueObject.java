@@ -7,7 +7,7 @@ import lombok.experimental.NonFinal;
 import lombok.experimental.Wither;
 
 @Value
-public class ValueExample {
+public class ValueObject {
     String name;
 
     @Wither(AccessLevel.PACKAGE)
