@@ -9,10 +9,13 @@ import lombok.experimental.Wither;
 @Value
 public class ValueExample {
     String name;
+
     @Wither(AccessLevel.PACKAGE)
     @NonFinal
     int age;
+
     double score;
+
     protected String[] tags;
 
     @ToString(includeFieldNames = true)
