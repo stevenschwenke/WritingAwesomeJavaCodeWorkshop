@@ -50,6 +50,10 @@ See packages. Here are only features that don't have example code.
 - ["What do you think of Lombok? Reddit](https://www.reddit.com/r/java/comments/6ilt97/what_do_you_think_of_project_lombok/): Lombok seems to have evolved so it doesn't use internal API calls anymore. However, not sure. 
 - ["Is it safe to use Lombok?"](https://stackoverflow.com/questions/3852091/is-it-safe-to-use-project-lombok/3853538), comment further down: "Lombok breaks the rules of annotation processing, in that it doesn't generate new source files. This means it cant be used with another annotation processors if they expect the getters/setters or whatever else to exist." 
 
+## Issue: Lombok doesn't know immutable collections
+- see ValueWithCollectionTest.java
+- solution: use [Configuration System](https://projectlombok.org/features/configuration) to disable @Value annotation and use [immutables.org](immutables.org/) for that specific task
+
 ## Other issues
 - ["Is it safe to use Lombok?"](https://stackoverflow.com/questions/3852091/is-it-safe-to-use-project-lombok/3853538), see second comment (not "right" answer)
     - refactoring support: simply renaming an attribute causes the "refactor getter and setter" dialogue to open, however IntelliJ IDEA tries to refactor much more than just the getter and setter. => Problem: much more hassle when refactoring, even with installed Plugin. 

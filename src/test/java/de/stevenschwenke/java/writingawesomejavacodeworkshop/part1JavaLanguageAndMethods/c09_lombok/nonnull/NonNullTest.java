@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class NonNullTest {
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void nonNullTest() throws Exception {
         NonNullExampleLombok x = new NonNullExampleLombok(null);
     }
