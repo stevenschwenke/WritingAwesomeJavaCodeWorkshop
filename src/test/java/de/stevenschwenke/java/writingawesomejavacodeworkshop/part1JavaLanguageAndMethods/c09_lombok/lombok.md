@@ -46,13 +46,16 @@ See packages. Here are only features that don't have example code.
 - ["Lombok, AutoValue, and Immutables"](http://marxsoftware.blogspot.de/2016/06/lombok-autovalue-immutables.html) by [Dustin Marx](https://www.blogger.com/profile/10790950138196529391)
 
 ## Issue: Internal API calls / no "normal" annotation processor
-- ["Code generating beans - mutable and immutable](http://blog.joda.org/2016/09/code-generating-beans.html) by [Stephen Colebourne](https://www.blogger.com/profile/01454237967846880639): _Immutables_ uses annotation processors to generate code during compilation. Developer has to write abstract classes or interfaces from which classes are generated. Lombok "hacks into the internal APIs of Eclipse and the Java compiler" and allows for code generation in the same class.
+- ["Code generating beans - mutable and immutable](http://blog.joda.org/2016/09/code-generating-beans.html) by [Stephen Colebourne](https://www.blogger.com/profile/01454237967846880639): _Immutables_ uses annotation processors to generate code during compilation. Developer has to write abstract classes or interfaces from which classes are generated. Lombok "hacks into the internal APIs of Eclipse and the Java compiler" and allows for code generation in the same class. => Only with Eclipse because of Eclipse compiler.
 - ["What do you think of Lombok? Reddit](https://www.reddit.com/r/java/comments/6ilt97/what_do_you_think_of_project_lombok/): Lombok seems to have evolved so it doesn't use internal API calls anymore. However, not sure. 
-- ["Is it safe to use Lombok?"](https://stackoverflow.com/questions/3852091/is-it-safe-to-use-project-lombok/3853538), comment further down: "Lombok breaks the rules of annotation processing, in that it doesn't generate new source files. This means it cant be used with another annotation processors if they expect the getters/setters or whatever else to exist." 
+- ["Is it safe to use Lombok?"](https://stackoverflow.com/questions/3852091/is-it-safe-to-use-project-lombok/3853538), comment further down: "Lombok breaks the rules of annotation processing, in that it doesn't generate new source files. This means it cant be used with another annotation processors if they expect the getters/setters or whatever else to exist."
+
+ 
+- __Baseline:__ If you use IntelliJ IDEA and you have no other annotation processors running, everything is fine.
 
 ## Issue: Lombok doesn't know immutable collections
 - see ValueWithCollectionTest.java
-- solution: use [Configuration System](https://projectlombok.org/features/configuration) to disable @Value annotation and use [immutables.org](immutables.org/) for that specific task
+- __solution__: use [Configuration System](https://projectlombok.org/features/configuration) to disable @Value annotation and use [immutables.org](immutables.org/) for that specific task
 
 ## Other issues
 - ["Is it safe to use Lombok?"](https://stackoverflow.com/questions/3852091/is-it-safe-to-use-project-lombok/3853538), see second comment (not "right" answer)
