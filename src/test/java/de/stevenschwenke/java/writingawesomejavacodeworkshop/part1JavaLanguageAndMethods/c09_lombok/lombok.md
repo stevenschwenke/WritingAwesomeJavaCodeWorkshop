@@ -67,6 +67,3 @@ See packages. Here are only features that don't have example code.
     - reference search for attribute will show occurrences of getter and setter => OK
     - more assurance: Oliver Gierke added Lombok to Spring Data Rest + configuration system 
 - There's an automated way to [delombok](https://projectlombok.org/features/delombok)
-
-## Tasks
-- decide for main project
