@@ -3,24 +3,14 @@ package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageA
 import org.junit.Test;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Optional;
-import java.util.OptionalInt;
-import java.util.Set;
+import java.util.*;
 import java.util.function.IntSupplier;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 /**
  * The following examples are extracted from the talk "API-Design with Lambdas" by Angelika Langer.
@@ -152,10 +142,10 @@ public class APIDesignWithLambdas {
      *
      * @param <V> Value type of this container
      */
-    private class UnflexibleContainer<V> {
+    private class InflexibleContainer<V> {
         V value;
 
-        UnflexibleContainer(V value) {
+        InflexibleContainer(V value) {
             this.value = value;
         }
 
@@ -169,8 +159,8 @@ public class APIDesignWithLambdas {
     }
 
     @Test
-    public void unflexibleContainerTest() {
-        UnflexibleContainer<String> box = new UnflexibleContainer<>("100100101010");
+    public void inflexibleContainerTest() {
+        InflexibleContainer<String> box = new InflexibleContainer<>("100100101010");
         assertTrue(box.valueLonger5Chars());
         assertTrue(box.valueStartsWith1());
     }
