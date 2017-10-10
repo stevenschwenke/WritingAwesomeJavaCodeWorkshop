@@ -17,7 +17,7 @@ public class PureFunctions {
         return x + 1;
     }
 
-    // According to IDEA, this function is pure. However, it cannot be made static.
+    // According to IDEA, this impure function is pure. However, it uses the environment and cannot be made static.
     private int myPureFunction2(int x) {
         return x + y +1;
     }
