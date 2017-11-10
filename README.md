@@ -6,8 +6,6 @@ Shippable status:
 Travis status:
 [![Build Status](https://travis-ci.org/stevenschwenke/WritingAwesomeJavaCodeWorkshop.svg?branch=master)](https://travis-ci.org/stevenschwenke/WritingAwesomeJavaCodeWorkshop)
 
-[![Dependency Status](https://www.versioneye.com/user/projects/55a8fd323065350020000139/badge.svg?style=flat)](https://www.versioneye.com/user/projects/565985d4036c320027000001)
-
 ## Meta: About this workshop
 
 This workshop shows Java code that uses more advanced techniques of the language. Also, best practices are shown.
