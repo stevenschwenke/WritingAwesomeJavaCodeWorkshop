@@ -61,9 +61,20 @@ This is a set of processes and tips for dealing with legacy code. Often, these c
 
 #Mikado Method
 ##Problem
-- Problem: refactoring R1 produces issue which needs another refactoring R2 which produces issue which ....
-- => one refactoring leads to many changes that are hard to understand and even harder to merge into master-branch
-- solution: only handle one issue at a time
+![](images/mikado_1.png)
+
+Problem: a simple refactoring ...
+
+![](images/mikado_2.png)
+
+... leads to another necessary refactoring
+
+![](images/mikado_3.png)
+
+That way, a tree of dependent refactorings is created 
+
+Solution: only handle one issue at a time
+
 ## Algorithm
 1. attempt refactoring
 2. run into some issue
@@ -72,6 +83,16 @@ This is a set of processes and tips for dealing with legacy code. Often, these c
 5. beginn refactoring issue => 1. step 
 6. repeat until all issues are doable (= leaves of the graph)
 7. refactor issues from leaves to the root of the graph
+
+![](images/mikado_4.png)
+
+With this algorithm, the tree will be resolved by doing one tiny refactoring after the other, ...
+
+![](images/mikado_5.png)
+
+... until the first refactoring can be implemented without problems. 
+
+
 ##Tipps
 - (huge) Mikado graph can be processed over time instead of in one huge leap. Attention: Too much time = possible changes in graph due to changed codebase 
 
