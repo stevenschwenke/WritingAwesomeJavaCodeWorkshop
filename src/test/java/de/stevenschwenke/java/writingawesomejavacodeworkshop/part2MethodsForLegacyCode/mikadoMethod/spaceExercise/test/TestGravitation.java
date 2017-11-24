@@ -2,6 +2,7 @@ package de.stevenschwenke.java.writingawesomejavacodeworkshop.part2MethodsForLeg
 
 import de.stevenschwenke.java.writingawesomejavacodeworkshop.part2MethodsForLegacyCode.mikadoMethod.spaceExercise.src.PhysicalObject;
 import de.stevenschwenke.java.writingawesomejavacodeworkshop.part2MethodsForLegacyCode.mikadoMethod.spaceExercise.src.Space;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -9,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * This example code is taken from https://github.com/mikadomethod/space.
  */
+@Ignore("This test causes exceptions when building on a server without a display, hence ignored.")
 public class TestGravitation {
 
     @Test
