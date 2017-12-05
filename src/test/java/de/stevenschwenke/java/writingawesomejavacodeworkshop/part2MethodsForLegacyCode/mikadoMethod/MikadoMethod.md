@@ -35,7 +35,17 @@ With this algorithm, the tree will be resolved by doing one tiny refactoring aft
 Taken from [Mikado method examples and exercises](https://github.com/mikadomethod), [here](spaceExercise/README.md) are three exercises for the method, including a sample codebase. 
 
 ## Tipps
+- Use simple, digital means to "draw" the graph, for example plain text with indentation as levels. Paper doesn't scale well.
+- task notation: [ ] for open tasks, [X] for closed tasks 
 - (huge) Mikado graph can be processed over time instead of in one huge leap. Attention: Too much time = possible changes in graph due to changed codebase 
+
+## Application
+- common trap: thinking to complicated, doing multiple tasks "in parallel" (not possible!)
+- method very useful for error tracking, debugging and explorative testing
+- very useful for longer analysis
+- "I know that I forgot something, but I don't know what ..." - bad feeling!
+- Guy that does your code reviews will be happy about smaller commits!
+- Drawing forces different thinking processes.
 
 ## Sources
 - Stefan Lieser "Die Mikado Methode" ([youtube](https://www.youtube.com/watch?v=qtIGDc6LTls))
