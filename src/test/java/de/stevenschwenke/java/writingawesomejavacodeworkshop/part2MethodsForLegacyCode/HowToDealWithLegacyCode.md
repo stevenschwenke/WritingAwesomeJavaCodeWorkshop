@@ -7,6 +7,8 @@ This is a set of processes and tips for dealing with legacy code. Often, these c
 
 # Golden Master
 
+![](Neumann_TELDEC-DMM_Kupferfolien-Schneidemaschine.jpg)
+
 - important goal: safety! Under no circumstances would you want to change the behavior of the code
 - hence: test coverage provides a "flashing red light" if you accidentally change behavior
  - what if no good test coverage existent? Often not possible to write good JUnit tests

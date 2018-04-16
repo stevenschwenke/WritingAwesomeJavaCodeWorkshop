@@ -1,0 +1,7 @@
+== Java
+. What comment types exist in Java? What is their syntax and purpose?
+. What visibility modifier exist in Java? Explain each of them with an example.
+. In just *one word*: What is the general idea behind visibility modifier?
+. What is the general idea of the answer for the previous question?
+. What are hashCode and equals?
+. Why must hashCode and equals always be implemented together?
