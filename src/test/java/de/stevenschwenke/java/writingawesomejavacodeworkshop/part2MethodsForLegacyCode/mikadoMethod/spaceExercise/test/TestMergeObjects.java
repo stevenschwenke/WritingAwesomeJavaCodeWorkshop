@@ -1,9 +1,10 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part2MethodsForLegacyCode.mikadoMethod.spaceExercise.test;
 
 import de.stevenschwenke.java.writingawesomejavacodeworkshop.part2MethodsForLegacyCode.mikadoMethod.spaceExercise.src.PhysicalObject;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  * This example code is taken from https://github.com/mikadomethod/space.

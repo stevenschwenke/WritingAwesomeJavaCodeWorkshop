@@ -1,12 +1,12 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c06_null;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 /**
  * Null is a concept that has been in Java since forever. Although it has it's right of existence,
@@ -54,7 +54,7 @@ public class NullAndOptional {
         }
 
         public void setUsb(
-            USB usb) {
+                USB usb) {
             this.usb = usb;
         }
     }
@@ -72,10 +72,13 @@ public class NullAndOptional {
         }
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void npe() {
-        String version = new Computer().getSoundcard().getUsb().getVersion();
-        System.out.println(version);
+
+        assertThrows(NullPointerException.class, () -> {
+            String version = new Computer().getSoundcard().getUsb().getVersion();
+            System.out.println(version);
+        });
     }
 
     @Test
@@ -146,21 +149,21 @@ public class NullAndOptional {
         Plan plan = null; // our return value
         if (customer == null) {
             plan = new Plan("basic");
-        }
-        else {
+        } else {
             plan = customer.getPlan();
         }
 
     }
 
     /**
-     *  Special customer that is null. This class replaces the null for customers.
+     * Special customer that is null. This class replaces the null for customers.
      */
     private class NullCustomer extends Customer {
 
         boolean isNull() {
             return true;
         }
+
         Plan getPlan() {
             return new Plan("Nullplan");
         }
@@ -195,7 +198,7 @@ public class NullAndOptional {
         }
 
         public void setSoundcard(
-            Optional<BetterSoundcard> soundcard) {
+                Optional<BetterSoundcard> soundcard) {
             this.soundcard = soundcard;
         }
     }
@@ -209,7 +212,7 @@ public class NullAndOptional {
         }
 
         public void setUsb(
-            Optional<USB> usb) {
+                Optional<USB> usb) {
             this.usb = usb;
         }
     }
@@ -235,15 +238,20 @@ public class NullAndOptional {
         assertEquals(soundcard, emptyOrNonEmptyOptional.get());
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void emptyOptionalThrowsNoSuchElementException() {
-        Optional<Soundcard> emptyOptional = Optional.empty();
-        emptyOptional.get();
+
+        assertThrows(NoSuchElementException.class, () -> {
+            Optional<Soundcard> emptyOptional = Optional.empty();
+            emptyOptional.get();
+        });
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void creatingAnEmptyOptionalTheWrongWay() {
-        Optional.of(null);
+        assertThrows(NullPointerException.class, () -> {
+            Optional.of(null);
+        });
     }
 
     @Test
@@ -251,14 +259,13 @@ public class NullAndOptional {
 
         BetterComputer computer = new BetterComputer();
         computer
-            .setSoundcard(Optional.ofNullable(Math.random() < 0.5 ? null : new BetterSoundcard()));
+                .setSoundcard(Optional.ofNullable(Math.random() < 0.5 ? null : new BetterSoundcard()));
 
         // Default value:
         BetterSoundcard soundcard = computer.getSoundcard().orElse(new BetterSoundcard());
 
         // Throwing an exception if optional is empty:
         computer.getSoundcard().orElseThrow(() -> new RuntimeException("I need a soundcard!"));
-
     }
 
     @Test
@@ -282,33 +289,35 @@ public class NullAndOptional {
 
         Soundcard soundcard = Math.random() < 0.5 ? null : new Soundcard();
 
-        if(soundcard != null){
+        if (soundcard != null) {
             USB usb = soundcard.getUsb();
-            if(usb != null && "3.0".equals(usb.getVersion())){
+            if (usb != null && "3.0".equals(usb.getVersion())) {
                 System.out.println("ok");
             }
         }
 
         Optional<Soundcard> maybeSoundcard = Optional.ofNullable(Math.random() < 0.5 ? null : new Soundcard());
         maybeSoundcard.map(Soundcard::getUsb)
-            .filter(usb -> "3.0".equals(usb.getVersion()))
+                .filter(usb -> "3.0".equals(usb.getVersion()))
                 .ifPresent((x) -> System.out.println("ok"));
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void flatMap() {
 
-        // error-prone:
-        Computer computer = Math.random() < 0.5 ? null : new Computer();
-        String version = computer.getSoundcard().getUsb().getVersion();
+        assertThrows(NullPointerException.class, () -> {
+            // error-prone:
+            Computer computer = Math.random() < 0.5 ? null : new Computer();
+            String version = computer.getSoundcard().getUsb().getVersion();
 
-        // awesome:
-        // Because of multiple nesting of Optionals in these objects, flatMap has to be used:
-        Optional<BetterComputer> betterComputer2 = Optional.ofNullable(Math.random() < 0.5 ? null : new BetterComputer());
-        version = betterComputer2.flatMap(BetterComputer::getSoundcard)
-            .flatMap(BetterSoundcard::getUsb)
-            .map(USB::getVersion)
-            .orElse("UNKNOWN");
+            // awesome:
+            // Because of multiple nesting of Optionals in these objects, flatMap has to be used:
+            Optional<BetterComputer> betterComputer2 = Optional.ofNullable(Math.random() < 0.5 ? null : new BetterComputer());
+            version = betterComputer2.flatMap(BetterComputer::getSoundcard)
+                    .flatMap(BetterSoundcard::getUsb)
+                    .map(USB::getVersion)
+                    .orElse("UNKNOWN");
+        });
     }
 
     // If you cannot use Java 8 Optionals in your code, you can use Guava:

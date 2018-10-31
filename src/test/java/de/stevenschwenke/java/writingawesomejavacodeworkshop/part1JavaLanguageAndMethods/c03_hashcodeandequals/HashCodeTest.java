@@ -1,11 +1,11 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c03_hashcodeandequals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import static junit.framework.TestCase.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HashCodeTest {
 

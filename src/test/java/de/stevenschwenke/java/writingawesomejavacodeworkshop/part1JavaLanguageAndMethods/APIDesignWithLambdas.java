@@ -1,6 +1,6 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
@@ -8,8 +8,7 @@ import java.util.function.IntSupplier;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 /**
@@ -190,8 +189,9 @@ public class APIDesignWithLambdas {
         assertTrue(box.holdsValueWith(s -> s.startsWith("1")));
     }
 
-    @Test(expected = RuntimeException.class)
-    public void otherExamplesOfFlexibleAPI() throws Exception {
+    @Test
+    public void otherExamplesOfFlexibleAPI() {
+
         Set<Integer> integerSet = new HashSet<>(Arrays.asList(1,2,3));
         assertEquals(3, integerSet.size());
         integerSet.removeIf(x -> x  == 3); // Flexible API
@@ -201,10 +201,12 @@ public class APIDesignWithLambdas {
         Object[] array = integerStream.filter(x -> x < 3).toArray(); // filter() = flexible API
         assertEquals(2, array.length);
 
-        Optional<String> optional = Optional.empty();
-        // Exception can be chosen by by user of the optional (flexible!) and is constructed
-        // only when needed (deferred execution!).
-        optional.orElseThrow(() -> new RuntimeException("My special exception"));
+        assertThrows(RuntimeException.class, () -> {
+            Optional<String> optional = Optional.empty();
+            // Exception can be chosen by by user of the optional (flexible!) and is constructed
+            // only when needed (deferred execution!).
+            optional.orElseThrow(() -> new RuntimeException("My special exception"));
+        });
     }
 
     ////////////////////////

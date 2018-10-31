@@ -1,6 +1,6 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Demonstrates some nice features.

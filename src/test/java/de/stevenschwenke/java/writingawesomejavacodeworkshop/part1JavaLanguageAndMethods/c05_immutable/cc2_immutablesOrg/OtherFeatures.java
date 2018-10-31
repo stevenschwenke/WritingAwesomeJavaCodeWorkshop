@@ -1,6 +1,6 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c05_immutable.cc2_immutablesOrg;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class OtherFeatures {
 

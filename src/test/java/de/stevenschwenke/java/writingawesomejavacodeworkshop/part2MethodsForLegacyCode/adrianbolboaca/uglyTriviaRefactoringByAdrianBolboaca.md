@@ -112,7 +112,7 @@ This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blo
      ```
 
 ## Using System Rules to hijack system.out
-The method getConsoleOutput used above can be replaced by using [System Rules](http://stefanbirkner.github.io/system-rules/index.html) by [Stefan Birkner](http://www.stefan-birkner.de/). Here's the setup and first test:
+In a previous version of this workshop, the method getConsoleOutput used above could be replaced by using [System Rules](http://stefanbirkner.github.io/system-rules/index.html) by [Stefan Birkner](http://www.stefan-birkner.de/). However, since the upgrade of this workshop to JUnit 5 the great library from Stefan cannot be used. Here's the setup and first test:
 
    ```java
     private Game game;

@@ -1,11 +1,12 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part2MethodsForLegacyCode.adrianbolboaca.ep_2_golden_master;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  * These are the resulting tests from Adrian Bolboacas great Code Cast, see
@@ -13,7 +14,7 @@ import static junit.framework.TestCase.assertEquals;
  */
 public class GameTestsEpisode2 {
 
-    @Ignore("Ignored because this should only be called once to create Golden Master data.")
+    @Disabled("Ignored because this should only be called once to create Golden Master data.")
     @Test
     public void generateGoldenMasters() throws IOException {
         GoldenMaster goldenMaster = new GoldenMaster();

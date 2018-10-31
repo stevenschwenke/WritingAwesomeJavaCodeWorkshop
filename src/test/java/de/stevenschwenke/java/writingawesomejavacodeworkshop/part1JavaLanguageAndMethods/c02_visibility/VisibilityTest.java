@@ -1,8 +1,7 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c02_visibility;
 
 import de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c02_visibility.another.Subclass;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * This class demonstrates different visibility modifiers.

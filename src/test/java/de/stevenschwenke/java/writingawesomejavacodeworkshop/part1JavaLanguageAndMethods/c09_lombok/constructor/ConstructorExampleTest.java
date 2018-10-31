@@ -1,6 +1,6 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c09_lombok.constructor;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ConstructorExampleTest {
 

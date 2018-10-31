@@ -1,13 +1,13 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageAndMethods.c05_immutable.cc2_immutablesOrg;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static junit.framework.TestCase.assertFalse;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class AmountOfMoneyExample {
 
@@ -31,11 +31,14 @@ public class AmountOfMoneyExample {
         assertEquals("EUR", amount.getCurrency());
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test
     public void invalidObjectCreationWillThrowIllegalStateException() throws Exception {
-        ImmutableAmountOfMoneyWithCurrency gb = ImmutableAmountOfMoneyWithCurrency.builder()
-                .amount(100)
-                .build();
+
+        assertThrows(IllegalStateException.class, () -> {
+            ImmutableAmountOfMoneyWithCurrency gb = ImmutableAmountOfMoneyWithCurrency.builder()
+                    .amount(100)
+                    .build();
+        });
     }
 
     @Test

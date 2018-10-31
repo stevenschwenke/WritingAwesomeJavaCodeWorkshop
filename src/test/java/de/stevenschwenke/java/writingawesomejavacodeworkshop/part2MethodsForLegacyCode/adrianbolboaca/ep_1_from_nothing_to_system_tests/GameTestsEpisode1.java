@@ -1,39 +1,41 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part2MethodsForLegacyCode.adrianbolboaca.ep_1_from_nothing_to_system_tests;
 
 import de.stevenschwenke.java.writingawesomejavacodeworkshop.part3ApplyingToLegacyCode.legacy_ugly_trivia.Game;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * These are the resulting tests from Adrian Bolboacas great Code Cast, see
  * http://blog.adrianbolboaca.ro/2014/04/from-nothing-to-system-tests-code-cast/.
- * I enhanced them by using the the great System Rules (http://stefanbirkner.github.io/system-rules/).
  */
 public class GameTestsEpisode1 {
 
     private Game game;
+    private ByteArrayOutputStream consoleOutput;
 
-    @Rule
-    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
-
-    @Before
+    @BeforeEach
     public void setup() {
         game = new Game();
+        consoleOutput = getConsoleOutput();
+    }
+
+    private ByteArrayOutputStream getConsoleOutput() {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(stream);
+        System.setOut(printStream);
+        return stream;
     }
 
     @Test
     public void WhenGameIsCreatedNothingIsWrittenToTheOutput() {
-        String systemOut = systemOutRule.getLog();
         String emptyString = ""; // extracted to variable to make clear my intent was to have an empty output
 
-        assertEquals(emptyString, systemOut);
+        assertEquals(emptyString, consoleOutput.toString());
     }
 
     @Test
@@ -44,7 +46,7 @@ public class GameTestsEpisode1 {
 
         game.add(playerName);
 
-        assertEquals(playerNameAndNumber, systemOutRule.getLog());
+        assertEquals(playerNameAndNumber, consoleOutput.toString());
     }
 
     @Test
@@ -59,7 +61,7 @@ public class GameTestsEpisode1 {
         game.add(playerName);
         game.add(secondPlayerName);
 
-        assertEquals(playerNameAndNumber, systemOutRule.getLog());
+        assertEquals(playerNameAndNumber, consoleOutput.toString());
     }
 
     @Test
@@ -74,6 +76,6 @@ public class GameTestsEpisode1 {
                 "They have rolled a 1\r\n" +
                 "SomePlayer's new location is 1\r\n" +
                 "The category is Science\r\n" +
-                "Science Question 0\r\n", systemOutRule.getLog());
+                "Science Question 0\r\n", consoleOutput.toString());
     }
 }

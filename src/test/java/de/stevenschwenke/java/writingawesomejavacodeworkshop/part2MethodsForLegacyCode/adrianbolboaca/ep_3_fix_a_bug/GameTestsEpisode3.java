@@ -1,16 +1,19 @@
 package de.stevenschwenke.java.writingawesomejavacodeworkshop.part2MethodsForLegacyCode.adrianbolboaca.ep_3_fix_a_bug;
 
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * These are the resulting tests from Adrian Bolboacas great Code Cast, see
  * http://blog.adrianbolboaca.ro/2014/05/fix-bugs-on-legacy-code-code-cast/.
- *
+ * <p>
  * Bug report:
  * The message announcing a correct answer should be
  * "Answer was correct!!!!"
@@ -19,18 +22,33 @@ import static org.junit.Assert.assertEquals;
  */
 public class GameTestsEpisode3 {
 
-    @Rule
-    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
+    private ByteArrayOutputStream consoleOutput;
+
+    @BeforeEach
+    public void setup() {
+        consoleOutput = getConsoleOutput();
+    }
+
+    private ByteArrayOutputStream getConsoleOutput() {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(stream);
+        System.setOut(printStream);
+        return stream;
+    }
 
     /**
      * Attempt to write a system test: Simply calling method with defect in it. Results in an exception.
      */
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
     public void createSystemTestAttempt1() {
-        Game_unmodified game = new Game_unmodified();
-        game.wasCorrectlyAnswered();
 
-        assertEquals("", systemOutRule.getLog());
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+
+            Game_unmodified game = new Game_unmodified();
+            game.wasCorrectlyAnswered();
+
+            assertEquals("", consoleOutput.toString());
+        });
     }
 
     /**
@@ -45,10 +63,10 @@ public class GameTestsEpisode3 {
         assertEquals("player1 was added\r\n" +
                 "They are player number 1\r\n" +
                 "Answer was corrent!!!!\r\n" +
-                "player1 now has 1 Gold Coins.\r\n", systemOutRule.getLog());
+                "player1 now has 1 Gold Coins.\r\n", consoleOutput.toString());
     }
 
-    @Ignore("Will be deleted later on")
+    @Disabled("Will be deleted later on")
     @Test
     public void correctAnswerMessageIsValid() {
         Game game = new Game();
