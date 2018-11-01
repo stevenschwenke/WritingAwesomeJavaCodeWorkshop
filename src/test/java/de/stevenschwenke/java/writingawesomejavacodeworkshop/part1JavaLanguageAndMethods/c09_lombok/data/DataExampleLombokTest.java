@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class DataExampleLombokTest {
+class DataExampleLombokTest {
 
     @Test
-    public void lombokGeneratesConstructorAndGetter() throws Exception {
+    void lombokGeneratesConstructorAndGetter() {
 
         // Annotation "data" = toString + equalsAndHashCode + Getter + Setter + RequiredArgsConstructor
 

@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class ValueObjectTest {
+class ValueObjectTest {
 
     @Test
-    public void value() throws Exception {
+    void value() {
 
         // normal constructor
         ValueObject value1 = new ValueObject("name", 12, 12d, new String[]{});

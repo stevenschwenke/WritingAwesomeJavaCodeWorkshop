@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 /**
  * Tests to visualize the difference between compareTo() and equals()
  */
-public class BigDecimalCompareEqual {
+class BigDecimalCompareEqual {
 
     /**
      * The method compareTo() returns an int -1, 0, +1 based on the difference of both numbers.
@@ -21,7 +21,7 @@ public class BigDecimalCompareEqual {
      *         -1    0    +1
      */
     @Test
-    public void compareTo() {
+    void compareTo() {
         int c1_5 = new BigDecimal("1").compareTo(new BigDecimal("5"));
         int c1_1 = new BigDecimal("1").compareTo(new BigDecimal("1"));
         int c5_1 = new BigDecimal("5").compareTo(new BigDecimal("1"));
@@ -35,7 +35,7 @@ public class BigDecimalCompareEqual {
      * The method equals() returns a boolean based on whether the numbers are equal or not.
      */
     @Test
-    public void equals() {
+    void equals() {
         boolean e1_1 = new BigDecimal("1").equals(new BigDecimal("1"));
         boolean e1_5 = new BigDecimal("1").equals(new BigDecimal("5"));
         boolean e5_1 = new BigDecimal("5").equals(new BigDecimal("1"));
@@ -54,7 +54,7 @@ public class BigDecimalCompareEqual {
      * Look inside the respective JavaDoc for more information.
      */
     @Test
-    public void differenceOnScale() {
+    void differenceOnScale() {
         BigDecimal dec1_5  = new BigDecimal("1.5");
         BigDecimal dec1_50 = new BigDecimal("1.50");
 

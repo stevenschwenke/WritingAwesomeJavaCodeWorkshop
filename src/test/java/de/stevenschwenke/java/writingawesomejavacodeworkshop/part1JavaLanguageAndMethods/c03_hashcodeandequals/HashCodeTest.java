@@ -7,7 +7,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class HashCodeTest {
+class HashCodeTest {
 
     /*
 
@@ -18,7 +18,7 @@ public class HashCodeTest {
      */
 
     @Test
-    public void objectInHashSetGetsLostWhenHashCodeChanges() {
+    void objectInHashSetGetsLostWhenHashCodeChanges() {
         Set<Person> crowd = new HashSet<>();
         Person hans = new Person("Hans");
         crowd.add(hans);

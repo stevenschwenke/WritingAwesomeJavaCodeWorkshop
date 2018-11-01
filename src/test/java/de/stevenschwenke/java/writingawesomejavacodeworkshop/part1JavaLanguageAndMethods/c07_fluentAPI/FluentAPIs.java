@@ -13,13 +13,13 @@ import java.util.stream.Stream;
 /**
  * This chapter explains what fluent APIs are, how to write them and where they are already used.
  */
-public class FluentAPIs {
+class FluentAPIs {
 
     /*
         Fluent APIs are APIs that are designed to support method calls like this:
      */
     @Test
-    public void myCustomFluentAPITest() {
+    void myCustomFluentAPITest() {
         Store myStore = new Store();
         myStore.with("Desk").with("Rack").with("Chair").openFrom(LocalTime.of(9, 0))
             .openUntil(LocalTime.of(18, 0));
@@ -76,7 +76,7 @@ public class FluentAPIs {
     // is for you. However, it needs plugins to enable annotation processors to compile.
 
     @Test
-    public void examplesForFluentAPIs() {
+    void examplesForFluentAPIs() {
         // Streams:
         Stream<Double> stream1 = Stream.generate(Math::random);
         stream1.limit(3).sorted().forEach(System.out::println);
@@ -184,7 +184,7 @@ public class FluentAPIs {
     }
 
     @Test
-    public void testingOurDSL() {
+    void testingOurDSL() {
         Start start = new DSLStart();
 
         start.singleWord().end();

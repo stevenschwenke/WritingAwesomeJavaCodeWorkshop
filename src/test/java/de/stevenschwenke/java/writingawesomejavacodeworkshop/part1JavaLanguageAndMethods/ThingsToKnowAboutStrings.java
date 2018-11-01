@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
  * Extracted from Bernd Müllers talk, see
  * http://www.jug-ostfalen.de/article/2016/02/04/string-folien.html
  */
-public class ThingsToKnowAboutStrings {
+class ThingsToKnowAboutStrings {
 
     @Test
-    public void stringBufferAndStringBuilder() {
+    void stringBufferAndStringBuilder() {
         // Know the difference between
 
         String sbuffer = new StringBuffer("a").append("b").append("c").toString();

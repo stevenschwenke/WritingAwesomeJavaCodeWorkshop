@@ -13,13 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * These are the resulting tests from Adrian Bolboacas great Code Cast, see
  * http://blog.adrianbolboaca.ro/2014/04/from-nothing-to-system-tests-code-cast/.
  */
-public class GameTestsEpisode1 {
+class GameTestsEpisode1 {
 
     private Game game;
     private ByteArrayOutputStream consoleOutput;
 
     @BeforeEach
-    public void setup() {
+    void setup() {
         game = new Game();
         consoleOutput = getConsoleOutput();
     }
@@ -32,14 +32,14 @@ public class GameTestsEpisode1 {
     }
 
     @Test
-    public void WhenGameIsCreatedNothingIsWrittenToTheOutput() {
+    void WhenGameIsCreatedNothingIsWrittenToTheOutput() {
         String emptyString = ""; // extracted to variable to make clear my intent was to have an empty output
 
         assertEquals(emptyString, consoleOutput.toString());
     }
 
     @Test
-    public void whenPlayerIsAddedHisNameAndPlayerNumberIsWritten() {
+    void whenPlayerIsAddedHisNameAndPlayerNumberIsWritten() {
         String playerNameAndNumber = "Adi was added\r\n"
                 + "They are player number 1\r\n";
         String playerName = "Adi";
@@ -50,7 +50,7 @@ public class GameTestsEpisode1 {
     }
 
     @Test
-    public void whenTwoPlayersAreAddedTheirNameAndPlayerNumbersAreWritten() {
+    void whenTwoPlayersAreAddedTheirNameAndPlayerNumbersAreWritten() {
         String playerNameAndNumber = "Adi was added\r\n" +
                 "They are player number 1\r\n" +
                 "Alex was added\r\n" +
@@ -65,7 +65,7 @@ public class GameTestsEpisode1 {
     }
 
     @Test
-    public void whenRollingDiceNamesOfPlayersAndGameCategoryIsWritte() {
+    void whenRollingDiceNamesOfPlayersAndGameCategoryIsWritte() {
         game.add("SomePlayer");
 
         game.roll(1);

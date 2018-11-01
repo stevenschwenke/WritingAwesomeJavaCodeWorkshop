@@ -12,17 +12,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * These are the resulting tests from Adrian Bolboacas great Code Cast, see
  * http://blog.adrianbolboaca.ro/2014/05/golden-master-code-cast/.
  */
-public class GameTestsEpisode2 {
+class GameTestsEpisode2 {
 
     @Disabled("Ignored because this should only be called once to create Golden Master data.")
     @Test
-    public void generateGoldenMasters() throws IOException {
+    void generateGoldenMasters() throws IOException {
         GoldenMaster goldenMaster = new GoldenMaster();
         goldenMaster.generateGoldenMaster();
     }
 
     @Test
-    public void checkTriviaAgainstGoldenMaster() throws IOException {
+    void checkTriviaAgainstGoldenMaster() throws IOException {
         GoldenMaster goldenMaster = new GoldenMaster();
 
         for (long seed = 0; seed < GoldenMaster.SAMPLESIZE; seed++) {

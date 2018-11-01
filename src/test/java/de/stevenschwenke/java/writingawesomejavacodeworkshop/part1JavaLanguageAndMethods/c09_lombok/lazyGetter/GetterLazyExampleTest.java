@@ -2,10 +2,10 @@ package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageA
 
 import org.junit.jupiter.api.Test;
 
-public class GetterLazyExampleTest {
+class GetterLazyExampleTest {
 
     @Test
-    public void getterLazyExampleTest() throws Exception {
+    void getterLazyExampleTest() {
         GetterLazyExample getterLazyExample = new GetterLazyExample();
 
         // "expensive() called!" only once in terminal, but method called three times:

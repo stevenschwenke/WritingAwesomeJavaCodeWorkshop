@@ -2,10 +2,10 @@ package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageA
 
 import org.junit.jupiter.api.Test;
 
-public class BuilderExampleTest {
+class BuilderExampleTest {
 
     @Test
-    public void name() throws Exception {
+    void name() {
         BuilderExample builder1 = BuilderExample.builder().name("Name").age(12).build();
 
 //        BuilderExample builder2 = BuilderExample.builder().age(12).build(); //NPE
