@@ -257,15 +257,21 @@ class NullAndOptional {
     @Test
     void defaultValuesAndActions() {
 
-        BetterComputer computer = new BetterComputer();
-        computer
-                .setSoundcard(Optional.ofNullable(Math.random() < 0.5 ? null : new BetterSoundcard()));
+        // Throwing an exception if optional is empty:
+        assertThrows(RuntimeException.class, () -> {
+
+            Optional<BetterSoundcard> noSoundcard = Optional.empty();
+            BetterComputer computer = new BetterComputer();
+            computer.setSoundcard(noSoundcard);
+
+            computer.getSoundcard().orElseThrow(() -> new RuntimeException("I need a soundcard!"));
+        });
 
         // Default value:
+        BetterComputer computer = new BetterComputer();
+        computer.setSoundcard(Optional.empty());
         BetterSoundcard soundcard = computer.getSoundcard().orElse(new BetterSoundcard());
-
-        // Throwing an exception if optional is empty:
-        computer.getSoundcard().orElseThrow(() -> new RuntimeException("I need a soundcard!"));
+        assertNotNull(soundcard);
     }
 
     @Test
