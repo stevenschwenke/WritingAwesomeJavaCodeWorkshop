@@ -10,10 +10,10 @@ import static org.mockito.Mockito.*;
 /**
  * This class demonstrates the library Mockito.
  */
-public class MockitoDemo {
+class MockitoDemo {
 
     @Test
-    public void mockitoUsageViaMockitoWebsite() {
+    void mockitoUsageViaMockitoWebsite() {
         // mock creation
         List mockedList = mock(List.class);
 

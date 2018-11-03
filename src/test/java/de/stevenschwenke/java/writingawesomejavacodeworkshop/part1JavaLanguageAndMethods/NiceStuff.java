@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 /**
  * Demonstrates some nice features.
  */
-public class NiceStuff {
+class NiceStuff {
 
     @Test
-    public void readabilityOfBigIntegers() {
+    void readabilityOfBigIntegers() {
 
         // big integers can have separators with "_":
         int x = 1_000_000;
@@ -18,7 +18,7 @@ public class NiceStuff {
     }
 
     @Test
-    public void switchOverStrings() {
+    void switchOverStrings() {
 
         String string = "a";
 

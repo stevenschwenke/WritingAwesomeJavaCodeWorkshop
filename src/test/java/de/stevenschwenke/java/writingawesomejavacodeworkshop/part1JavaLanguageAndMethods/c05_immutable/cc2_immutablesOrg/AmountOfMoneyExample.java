@@ -9,10 +9,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class AmountOfMoneyExample {
+class AmountOfMoneyExample {
 
     @Test
-    public void immutableClassGeneratedFromInterface() throws Exception {
+    void immutableClassGeneratedFromInterface() {
         AmountOfMoneyWithCurrencyAsInterface amount = ImmutableAmountOfMoneyWithCurrencyAsInterface.builder()
                 .amount(300)
                 .currency("EUR")
@@ -22,7 +22,7 @@ public class AmountOfMoneyExample {
     }
 
     @Test
-    public void immutableClassGeneratedFromAbstractClass() throws Exception {
+    void immutableClassGeneratedFromAbstractClass() {
         ImmutableAmountOfMoneyWithCurrency amount = ImmutableAmountOfMoneyWithCurrency.builder()
                 .amount(300)
                 .currency("EUR")
@@ -32,7 +32,7 @@ public class AmountOfMoneyExample {
     }
 
     @Test
-    public void invalidObjectCreationWillThrowIllegalStateException() throws Exception {
+    void invalidObjectCreationWillThrowIllegalStateException() {
 
         assertThrows(IllegalStateException.class, () -> {
             ImmutableAmountOfMoneyWithCurrency gb = ImmutableAmountOfMoneyWithCurrency.builder()
@@ -42,7 +42,7 @@ public class AmountOfMoneyExample {
     }
 
     @Test
-    public void invalidObjectCreationWillNotThrowExceptionWhenOptionalsAreUsed() throws Exception {
+    void invalidObjectCreationWillNotThrowExceptionWhenOptionalsAreUsed() {
         ImmutableAmountOfMoneyWithOptionalCurrencyAsInterface gb = ImmutableAmountOfMoneyWithOptionalCurrencyAsInterface.builder()
                 .amount(100)
                 .build();
@@ -50,7 +50,7 @@ public class AmountOfMoneyExample {
     }
 
     @Test
-    public void lazyAttributes() throws Exception {
+    void lazyAttributes() {
         ImmutableOrderItemsAsInterface orderItem = ImmutableOrderItemsAsInterface.builder().amount(2).price(12).build();
         AbstractOrder order = ImmutableOrder.builder().addOrderItems(orderItem).build();
 
@@ -61,7 +61,7 @@ public class AmountOfMoneyExample {
     }
 
     @Test
-    public void from() throws Exception {
+    void from() {
         AmountOfMoneyWithCurrencyAsInterface templateAmount = ImmutableAmountOfMoneyWithCurrencyAsInterface.builder()
                 .amount(300)
                 .currency("EUR")
@@ -73,7 +73,7 @@ public class AmountOfMoneyExample {
     }
 
     @Test
-    public void immutableCollectionsAreNotNativeInJava() throws Exception {
+    void immutableCollectionsAreNotNativeInJava() {
         List<Integer> list1 = new ArrayList<>();
         list1.add(1);
         list1.add(2);
@@ -86,7 +86,7 @@ public class AmountOfMoneyExample {
     }
 
     @Test
-    public void supportedCollectionTypes() throws Exception {
+    void supportedCollectionTypes() {
 
         ImmutableAmountOfMoneyWithCurrency money1 = ImmutableAmountOfMoneyWithCurrency.builder().amount(100).currency("EUR").build();
         ImmutableAmountOfMoneyWithCurrency money2 = ImmutableAmountOfMoneyWithCurrency.builder().amount(100).currency("EUR").build();

@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 /**
  * This class demonstrates different visibility modifiers.
  */
-public class VisibilityTest {
+class VisibilityTest {
 
     @Test
-    public void visibilityTest() {
+    void visibilityTest() {
 
         // Because this test class is in the same package as the class under test, this is visible:
         PackagePrivateClass packagePrivateClass;
@@ -27,7 +27,7 @@ public class VisibilityTest {
     }
 
     @Test
-    public void differenceProtectedAndPackagePrivate() {
+    void differenceProtectedAndPackagePrivate() {
 
         // This class is a subclass of PublicClass. To see a difference to the test above, it's
         // located in another package.

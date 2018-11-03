@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GetterSetterTest {
+class GetterSetterTest {
 
     @Test
-    public void name() throws Exception {
+    void name() {
         GetterSetterExampleLombok object = new GetterSetterExampleLombok();
         object.setAge(12);
         assertEquals(12, object.getAge());

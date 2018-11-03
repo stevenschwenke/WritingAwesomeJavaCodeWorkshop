@@ -20,12 +20,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * but it is
  * "Answer was corrent!!!!"
  */
-public class GameTestsEpisode3 {
+class GameTestsEpisode3 {
 
     private ByteArrayOutputStream consoleOutput;
 
     @BeforeEach
-    public void setup() {
+    void setup() {
         consoleOutput = getConsoleOutput();
     }
 
@@ -40,7 +40,7 @@ public class GameTestsEpisode3 {
      * Attempt to write a system test: Simply calling method with defect in it. Results in an exception.
      */
     @Test
-    public void createSystemTestAttempt1() {
+    void createSystemTestAttempt1() {
 
         assertThrows(IndexOutOfBoundsException.class, () -> {
 
@@ -55,7 +55,7 @@ public class GameTestsEpisode3 {
      * Final version of system test: Trace source of exception -> There has to be a player added to the game.
      */
     @Test
-    public void gameWasCorrectlyAnsweredWhenNotInPenaltyBox() {
+    void gameWasCorrectlyAnsweredWhenNotInPenaltyBox() {
         Game_unmodified game = new Game_unmodified();
         game.add("player1");
         game.wasCorrectlyAnswered();
@@ -68,7 +68,7 @@ public class GameTestsEpisode3 {
 
     @Disabled("Will be deleted later on")
     @Test
-    public void correctAnswerMessageIsValid() {
+    void correctAnswerMessageIsValid() {
         Game game = new Game();
         String expected = "Answer was corrent!!!!";
         String actual = game.getCorrectAnswerMessage();
@@ -77,7 +77,7 @@ public class GameTestsEpisode3 {
     }
 
     @Test
-    public void correctAnswerMessageChangedBecauseOfBug() {
+    void correctAnswerMessageChangedBecauseOfBug() {
         Game game = new Game();
         String expected = "Answer was correct!!!!";
         String actual = game.getCorrectAnswerMessage();

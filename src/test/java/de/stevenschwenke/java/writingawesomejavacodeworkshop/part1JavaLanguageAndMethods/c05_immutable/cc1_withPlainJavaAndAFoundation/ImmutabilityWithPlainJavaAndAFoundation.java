@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ImmutabilityWithPlainJavaAndAFoundation {
 
     @Test
-    public void someImmutability() {
+    void someImmutability() {
         AccountBalance b1 = new AccountBalance(42.4);
         assertEquals(42.4, b1.getBalance());
 

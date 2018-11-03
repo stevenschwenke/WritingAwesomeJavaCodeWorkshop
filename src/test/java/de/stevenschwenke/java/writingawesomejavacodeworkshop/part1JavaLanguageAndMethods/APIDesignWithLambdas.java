@@ -16,7 +16,7 @@ import static org.mockito.Mockito.*;
  * See https://jaxenter.de/api-design-mit-lambdas-38265 for more details, topics and issues with
  * the code below.
  */
-public class APIDesignWithLambdas {
+class APIDesignWithLambdas {
 
     ////////////////////////
     // Deferred Execution:
@@ -82,7 +82,7 @@ public class APIDesignWithLambdas {
     }
 
     @Test
-    public void eagerWillCallCalcYEvenIfXIsZero() {
+    void eagerWillCallCalcYEvenIfXIsZero() {
         APIDesignWithLambdas instance = spy(this);
 
         instance.eager(instance.calcX(), instance.calcY());
@@ -92,7 +92,7 @@ public class APIDesignWithLambdas {
     }
 
     @Test
-    public void lazyWillNotCallCalcYIfXIsZero() {
+    void lazyWillNotCallCalcYIfXIsZero() {
         APIDesignWithLambdas instance = spy(this);
 
         instance.lazy(instance::calcX, instance::calcY);
@@ -102,7 +102,7 @@ public class APIDesignWithLambdas {
     }
 
     @Test
-    public void otherExamplesOfDeferredExecution() throws Exception {
+    void otherExamplesOfDeferredExecution() {
         Map<Integer, Integer> myMap = new HashMap<>();
 
         System.out.println("Always puts a value into the map:");
@@ -158,7 +158,7 @@ public class APIDesignWithLambdas {
     }
 
     @Test
-    public void inflexibleContainerTest() {
+    void inflexibleContainerTest() {
         InflexibleContainer<String> box = new InflexibleContainer<>("100100101010");
         assertTrue(box.valueLonger5Chars());
         assertTrue(box.valueStartsWith1());
@@ -183,14 +183,14 @@ public class APIDesignWithLambdas {
     }
 
     @Test
-    public void flexibleContainerTest() {
+    void flexibleContainerTest() {
         Container<String> box = new Container<>("100100101010");
         assertTrue(box.holdsValueWith(s -> s.length() > 5));
         assertTrue(box.holdsValueWith(s -> s.startsWith("1")));
     }
 
     @Test
-    public void otherExamplesOfFlexibleAPI() {
+    void otherExamplesOfFlexibleAPI() {
 
         Set<Integer> integerSet = new HashSet<>(Arrays.asList(1,2,3));
         assertEquals(3, integerSet.size());
@@ -217,7 +217,7 @@ public class APIDesignWithLambdas {
     ////////////////////////
 
     @Test
-    public void executeAroundPatternTest() {
+    void executeAroundPatternTest() {
 
         // Imagine a method call that throws many exceptions that have to be catched:
 

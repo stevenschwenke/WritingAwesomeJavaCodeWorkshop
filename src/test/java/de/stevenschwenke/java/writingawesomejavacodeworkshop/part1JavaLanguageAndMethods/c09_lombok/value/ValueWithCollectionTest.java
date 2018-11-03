@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class ValueWithCollectionTest {
+class ValueWithCollectionTest {
 
     @Test
-    public void collectionsInLombokAreNotImmutable() throws Exception {
+    void collectionsInLombokAreNotImmutable() {
 
         ValueWithCollection value = new ValueWithCollection("name", 12, 12d, new String[]{}, new ArrayList<>());
 

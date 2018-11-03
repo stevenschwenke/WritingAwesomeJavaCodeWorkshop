@@ -2,10 +2,10 @@ package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageA
 
 import org.junit.jupiter.api.Test;
 
-public class ConstructorExampleTest {
+class ConstructorExampleTest {
 
     @Test
-    public void constructorExampleTest() throws Exception {
+    void constructorExampleTest() {
 
         // "of"-Constructor:
         ConstructorExample<String> description = ConstructorExample.of("description");

@@ -9,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * This example code is taken from https://github.com/mikadomethod/space.
  */
-public class TestMergeObjects {
+class TestMergeObjects {
     @Test
-    public void mergeWithoutSpeed() throws Exception {
+    void mergeWithoutSpeed() {
         PhysicalObject one = new PhysicalObject(1, 1, 0, 0, 0, 1);
         PhysicalObject other = new PhysicalObject(1, 0, 1, 0, 0, 1);
         PhysicalObject merge = one.absorb(other);
@@ -22,7 +22,7 @@ public class TestMergeObjects {
     }
 
     @Test
-    public void mergeWithSpeed() throws Exception {
+    void mergeWithSpeed() {
         PhysicalObject one = new PhysicalObject(1, 1, 0, 1, 0, 1);
         PhysicalObject other = new PhysicalObject(1, 0, 1, 0, 1, 1);
         PhysicalObject merge = one.absorb(other);
@@ -34,7 +34,7 @@ public class TestMergeObjects {
     }
 
     @Test
-    public void mergeWithSpeedAndDifferentMasses() throws Exception {
+    void mergeWithSpeedAndDifferentMasses() {
         PhysicalObject one = new PhysicalObject(1, 1, 1, 1, 0, 1);
         PhysicalObject other = new PhysicalObject(4, 0, 0, 0, 1, 1);
         PhysicalObject merge = one.absorb(other);
@@ -46,7 +46,7 @@ public class TestMergeObjects {
     }
 
     @Test
-    public void headsOnMergeConservesZeroSumMomentum() throws Exception {
+    void headsOnMergeConservesZeroSumMomentum() {
         PhysicalObject one = new PhysicalObject(10, 0, 0, 100, 100, 1);
         PhysicalObject other = new PhysicalObject(100, 0, 0, -10, -10, 1);
         PhysicalObject merge = one.absorb(other);
@@ -58,7 +58,7 @@ public class TestMergeObjects {
     }
 
     @Test
-    public void headsOnMergeConservesMomentum() throws Exception {
+    void headsOnMergeConservesMomentum() {
         PhysicalObject one = new PhysicalObject(10, 0, 0, 10, 10, 1);
         PhysicalObject other = new PhysicalObject(100, 0, 0, 0, 0, 1);
         PhysicalObject merge = one.absorb(other);

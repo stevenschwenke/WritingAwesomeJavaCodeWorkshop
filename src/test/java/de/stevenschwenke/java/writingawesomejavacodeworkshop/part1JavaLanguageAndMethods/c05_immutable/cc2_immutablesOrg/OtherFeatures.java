@@ -2,10 +2,10 @@ package de.stevenschwenke.java.writingawesomejavacodeworkshop.part1JavaLanguageA
 
 import org.junit.jupiter.api.Test;
 
-public class OtherFeatures {
+class OtherFeatures {
 
     @Test
-    public void constructorMethod() throws Exception {
+    void constructorMethod() {
 
         // of()- method = constructor with attributes annotated with "@Value.Parameter":
         ImmutableCar redCar = ImmutableCar.of(4, "red");

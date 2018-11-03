@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Null is a concept that has been in Java since forever. Although it has it's right of existence,
  * it's often misused and bad code is created with it.
  */
-public class NullAndOptional {
+class NullAndOptional {
 
     /*
         - Null is evil because:
@@ -73,7 +73,7 @@ public class NullAndOptional {
     }
 
     @Test
-    public void npe() {
+    void npe() {
 
         assertThrows(NullPointerException.class, () -> {
             String version = new Computer().getSoundcard().getUsb().getVersion();
@@ -82,7 +82,7 @@ public class NullAndOptional {
     }
 
     @Test
-    public void avoidingNPETheUglyWay() {
+    void avoidingNPETheUglyWay() {
         Computer computer = Math.random() < 0.5 ? null : new Computer();
         String version = "UNKNOWN";
         if (computer != null) {
@@ -140,7 +140,7 @@ public class NullAndOptional {
     }
 
     @Test
-    public void throwingNPE() {
+    void throwingNPE() {
         Order order = new Order();
 
         // we don't know if the customer is null
@@ -170,7 +170,7 @@ public class NullAndOptional {
     }
 
     @Test
-    public void customNullObject() {
+    void customNullObject() {
 
         Order order = new Order();
 
@@ -218,7 +218,7 @@ public class NullAndOptional {
     }
 
     @Test
-    public void usingOptionals() {
+    void usingOptionals() {
 
         // Creating
 
@@ -239,7 +239,7 @@ public class NullAndOptional {
     }
 
     @Test
-    public void emptyOptionalThrowsNoSuchElementException() {
+    void emptyOptionalThrowsNoSuchElementException() {
 
         assertThrows(NoSuchElementException.class, () -> {
             Optional<Soundcard> emptyOptional = Optional.empty();
@@ -248,14 +248,14 @@ public class NullAndOptional {
     }
 
     @Test
-    public void creatingAnEmptyOptionalTheWrongWay() {
+    void creatingAnEmptyOptionalTheWrongWay() {
         assertThrows(NullPointerException.class, () -> {
             Optional.of(null);
         });
     }
 
     @Test
-    public void defaultValuesAndActions() {
+    void defaultValuesAndActions() {
 
         BetterComputer computer = new BetterComputer();
         computer
@@ -269,7 +269,7 @@ public class NullAndOptional {
     }
 
     @Test
-    public void filtering() {
+    void filtering() {
 
         // cumbersome:
         USB usb = Math.random() < 0.5 ? null : new USB("3.0");
@@ -285,7 +285,7 @@ public class NullAndOptional {
     }
 
     @Test
-    public void map() {
+    void map() {
 
         Soundcard soundcard = Math.random() < 0.5 ? null : new Soundcard();
 
@@ -303,7 +303,7 @@ public class NullAndOptional {
     }
 
     @Test
-    public void flatMap() {
+    void flatMap() {
 
         assertThrows(NullPointerException.class, () -> {
             // error-prone:

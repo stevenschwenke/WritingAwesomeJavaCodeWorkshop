@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class NonNullTest {
+class NonNullTest {
 
     @Test
-    public void nonNullTest() throws Exception {
+    void nonNullTest() {
         assertThrows(NullPointerException.class, () -> {
             NonNullExampleLombok x = new NonNullExampleLombok(null);
         });
