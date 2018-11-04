@@ -39,8 +39,8 @@ This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blo
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(stream);
         System.setOut(printStream);
-        String playerNameAndNumber = "Adi was added\r\n"
-                                     + "They are player number 1\r\n";
+        String playerNameAndNumber = "Adi was added" + System.lineSeparator()
+                                     + "They are player number 1" + System.lineSeparator();
         String playerName = "Adi";
 
         Game game = new Game();
@@ -71,10 +71,10 @@ This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blo
     @Test
     public void whenTwoPlayersAreAddedTheirNameAndPlayerNumbersAreWritten() {
         ByteArrayOutputStream stream = getConsoleOutput();
-        String playerNameAndNumber = "Adi was added\r\n" +
-                                     "They are player number 1\r\n" +
-                                     "Alex was added\r\n" +
-                                     "They are player number 2\r\n";
+        String playerNameAndNumber = "Adi was added" + System.lineSeparator() +
+                                     "They are player number 1" + System.lineSeparator() +
+                                     "Alex was added" + System.lineSeparator() +
+                                     "They are player number 2" + System.lineSeparator();
         String playerName = "Adi";
         String secondPlayerName = "Alex";
 
@@ -101,13 +101,13 @@ This is a transcript of the brillant Code Cast from [Adrian Bolboaca](http://blo
 
         game.roll(1);
 
-        assertEquals("SomePlayer was added\r\n" +
-        "They are player number 1\r\n" +
-        "SomePlayer is the current player\r\n"+
-        "They have rolled a 1\r\n" +
-        "SomePlayer's new location is 1\r\n"+
-        "The category is Science\r\n"+
-        "Science Question 0\r\n", stream.toString());
+        assertEquals("SomePlayer was added" + System.lineSeparator() +
+        "They are player number 1" + System.lineSeparator() +
+        "SomePlayer is the current player" + System.lineSeparator()+
+        "They have rolled a 1" + System.lineSeparator() +
+        "SomePlayer's new location is 1" + System.lineSeparator()+
+        "The category is Science" + System.lineSeparator()+
+        "Science Question 0" + System.lineSeparator(), stream.toString());
     }
      ```
 
@@ -176,10 +176,10 @@ In a previous version of this workshop, the method getConsoleOutput used above c
         game.add("player1");
         game.wasCorrectlyAnswered();
 
-        assertEquals("player1 was added\r\n" +
-                "They are player number 1\r\n" +
-                "Answer was corrent!!!!\r\n" +
-                "player1 now has 1 Gold Coins.\r\n", systemOutRule.getLog());
+        assertEquals("player1 was added" + System.lineSeparator() +
+                "They are player number 1" + System.lineSeparator() +
+                "Answer was corrent!!!!" + System.lineSeparator() +
+                "player1 now has 1 Gold Coins." + System.lineSeparator(), systemOutRule.getLog());
     }
     ```
 

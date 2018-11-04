@@ -60,10 +60,10 @@ class GameTestsEpisode3 {
         game.add("player1");
         game.wasCorrectlyAnswered();
 
-        assertEquals("player1 was added\r\n" +
-                "They are player number 1\r\n" +
-                "Answer was corrent!!!!\r\n" +
-                "player1 now has 1 Gold Coins.\r\n", consoleOutput.toString());
+        assertEquals("player1 was added" + System.lineSeparator() +
+                "They are player number 1" + System.lineSeparator() +
+                "Answer was corrent!!!!" + System.lineSeparator() +
+                "player1 now has 1 Gold Coins." + System.lineSeparator(), consoleOutput.toString());
     }
 
     @Disabled("Will be deleted later on")

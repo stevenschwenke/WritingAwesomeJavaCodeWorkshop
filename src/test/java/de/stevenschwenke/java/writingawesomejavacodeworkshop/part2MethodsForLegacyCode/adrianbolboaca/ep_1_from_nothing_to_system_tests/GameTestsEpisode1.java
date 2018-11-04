@@ -40,8 +40,8 @@ class GameTestsEpisode1 {
 
     @Test
     void whenPlayerIsAddedHisNameAndPlayerNumberIsWritten() {
-        String playerNameAndNumber = "Adi was added\r\n"
-                + "They are player number 1\r\n";
+        String playerNameAndNumber = "Adi was added" + System.lineSeparator()
+                + "They are player number 1" + System.lineSeparator();
         String playerName = "Adi";
 
         game.add(playerName);
@@ -51,10 +51,10 @@ class GameTestsEpisode1 {
 
     @Test
     void whenTwoPlayersAreAddedTheirNameAndPlayerNumbersAreWritten() {
-        String playerNameAndNumber = "Adi was added\r\n" +
-                "They are player number 1\r\n" +
-                "Alex was added\r\n" +
-                "They are player number 2\r\n";
+        String playerNameAndNumber = "Adi was added" + System.lineSeparator() +
+                "They are player number 1" + System.lineSeparator() +
+                "Alex was added" + System.lineSeparator() +
+                "They are player number 2" + System.lineSeparator();
         String playerName = "Adi";
         String secondPlayerName = "Alex";
 
@@ -70,12 +70,12 @@ class GameTestsEpisode1 {
 
         game.roll(1);
 
-        assertEquals("SomePlayer was added\r\n" +
-                "They are player number 1\r\n" +
-                "SomePlayer is the current player\r\n" +
-                "They have rolled a 1\r\n" +
-                "SomePlayer's new location is 1\r\n" +
-                "The category is Science\r\n" +
-                "Science Question 0\r\n", consoleOutput.toString());
+        assertEquals("SomePlayer was added" + System.lineSeparator() +
+                "They are player number 1" + System.lineSeparator() +
+                "SomePlayer is the current player" + System.lineSeparator() +
+                "They have rolled a 1" + System.lineSeparator() +
+                "SomePlayer's new location is 1" + System.lineSeparator() +
+                "The category is Science" + System.lineSeparator() +
+                "Science Question 0" + System.lineSeparator(), consoleOutput.toString());
     }
 }
